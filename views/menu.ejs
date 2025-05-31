@@ -1,11 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Menu</title>
 </head>
+
 <body>
   <h1>Full Menu</h1>
+  <h2>Mains</h2>
+  <ul>
+    <% menu.forEach((menuItem)=> {%>
+      <% if(menuItem.category === "mains") { %>
+      <li>
+        <%= menuItem.name %> - Price: <%= menuItem.price %> - Rating: <%= menuItem.Rating %>
+      </li>
+      <p>
+        <%= menuItem.details %>
+      </p>
+      <% } %>
+    <% }); %>
+  </ul>
+  <h2>Sides</h2>
+  <ul>
+    <% menu.forEach((menuItem)=> {%>
+      <% if(menuItem.category === "sides") { %>
+      <li>
+        <%= menuItem.name %> - Price: <%= menuItem.price %> - Rating: <%= menuItem.Rating %>
+      </li>
+      <p>
+        <%= menuItem.details %>
+      </p>
+      <% } %>
+    <% }); %>
+  </ul>
+  <h2>Desserts</h2>
+  <ul>
+    <% menu.forEach((menuItem)=> {%>
+      <% if(menuItem.category === "desserts") { %>
+      <li>
+        <%= menuItem.name %> - Price: <%= menuItem.price %> - Rating: <%= menuItem.Rating %>
+      </li>
+      <p>
+        <%= menuItem.details %>
+      </p>
+      <% } %>
+    <% }); %>
+  </ul>
 </body>
+
 </html>
