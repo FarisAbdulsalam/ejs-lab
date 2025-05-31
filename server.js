@@ -59,7 +59,9 @@ app.get('/menu', (req, res) => {
 });
 
 app.get('/menu/:category', (req, res) => {
-    res.render('category.ejs', { menu: RESTAURANT });
+    const food = RESTAURANT.menu.filter((item) => item.category === req.params.category);
+    const foodCategory = req.params.category;
+    res.render('category.ejs', { food, foodCategory });
 });
 
 app.listen(3000);
